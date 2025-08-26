@@ -4,7 +4,7 @@ services:
     env: php
     plan: free
     region: oregon   # or frankfurt if you're in Europe
-
+    dockerfilePath: ./Dockerfile
     buildCommand: |
       composer install --no-dev --optimize-autoloader
       php artisan key:generate --force
@@ -27,4 +27,4 @@ services:
 databases:
   - name: attendance
     plan: free
-    region: oregon
+    region: oregongit push -u origin main
