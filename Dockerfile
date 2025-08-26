@@ -34,3 +34,6 @@ EXPOSE 8080
 
 # Apache will run on port 8080
 CMD ["apache2-foreground"]
+
+# Run migrations on container start
+CMD php artisan migrate --force && apache2-foreground
