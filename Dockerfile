@@ -21,11 +21,11 @@ COPY . .
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Set proper permissions
+# Set permissions for Laravel
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Expose Render's port
+# Expose port
 EXPOSE 8080
 
-# Apache will run on port 8080
+# Start Apache
 CMD ["apache2-foreground"]
