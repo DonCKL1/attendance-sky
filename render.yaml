@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: attendance-system
+    env: php
+    plan: free
+    region: oregon   # or frankfurt if you're in Europe
+
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      php artisan key:generate --force
+      php artisan config:cache
+      php artisan route:cache
+      php artisan view:cache
+
+    startCommand: php artisan serve --host 0.0.0.0 --port $PORT
+
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://attendance-system.onrender.com
+
+databases:
+  - name: attendance
+    plan: free
+    region: oregon
