@@ -223,7 +223,7 @@
         </main>
         
         <footer class="text-center mt-5 py-3">
-            <p class="mb-0"><strong>&copy; 2025 KNUST Attendance System. Developed By CKL<strong></p>
+            <p class="mb-0"><strong>&copy; 2025 KNUST Attendance System. Developed By Skies<strong></p>
         </footer>
     </div>
 
